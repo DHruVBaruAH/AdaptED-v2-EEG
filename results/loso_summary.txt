@@ -1,0 +1,48 @@
+LOSO Cross-Validation Results
+======================================================================
+
+
+XGBoost
+----------------------------------------
+  Epoch-level metrics (3310 epochs):
+    AUC: 0.6822
+    Accuracy: 0.6438
+    F1: 0.6916
+    Precision: 0.6724
+    Recall: 0.7119
+  Subject-level metrics (120 subjects):
+    AUC: 0.7508
+    Accuracy: 0.7417
+    F1: 0.7634
+    Precision: 0.7143
+    Recall: 0.8197
+
+RandomForest
+----------------------------------------
+  Epoch-level metrics (3310 epochs):
+    AUC: 0.6670
+    Accuracy: 0.6435
+    F1: 0.7063
+    Precision: 0.6566
+    Recall: 0.7641
+  Subject-level metrics (120 subjects):
+    AUC: 0.7119
+    Accuracy: 0.6917
+    F1: 0.7413
+    Precision: 0.6463
+    Recall: 0.8689
+
+LogisticRegression
+----------------------------------------
+  Epoch-level metrics (3310 epochs):
+    AUC: 0.6814
+    Accuracy: 0.6387
+    F1: 0.6776
+    Precision: 0.6784
+    Recall: 0.6769
+  Subject-level metrics (120 subjects):
+    AUC: 0.7633
+    Accuracy: 0.7000
+    F1: 0.7188
+    Precision: 0.6866
+    Recall: 0.7541
