@@ -61,24 +61,17 @@ FEATURE_PARAMS = {
 # Epoch a single subject's signal
 # ---------------------------------------------------------------------------
 def segment_subject(signal, epoch_length=EPOCH_LENGTH_SAMPLES):
-    """
-    Split a (n_channels, n_samples) signal into non-overlapping epochs.
-    Returns array of shape (n_epochs, n_channels, epoch_length).
-    Drops the trailing partial epoch if signal length is not a multiple.
-    """
-    n_channels, n_samples = signal.shape
-    n_epochs = n_samples // epoch_length
+    
+     n_channels, n_samples = signal.shape
+     step = epoch_length // 2  # 50% overlap
 
-    if n_epochs == 0:
+     starts = list(range(0, n_samples - epoch_length + 1, step))
+
+     if len(starts) == 0:
         return np.empty((0, n_channels, epoch_length))
 
-    # Truncate to multiple of epoch_length
-    usable_samples = n_epochs * epoch_length
-    trimmed = signal[:, :usable_samples]
-    # Reshape: (n_channels, n_epochs, epoch_length) -> (n_epochs, n_channels, epoch_length)
-    epochs = trimmed.reshape(n_channels, n_epochs, epoch_length).transpose(1, 0, 2)
-    return epochs
-
+     epochs = np.array([signal[:, s:s + epoch_length] for s in starts])
+     return epochs  # shape: (n_epochs, n_channels, epoch_length)
 
 # ---------------------------------------------------------------------------
 # Main

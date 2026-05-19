@@ -1,4 +1,4 @@
-
+from sklearn.svm import SVC
 from scipy.sparse.linalg import _special_sparse_arrays
 from scipy.sparse.linalg import _special_sparse_arrays
 from scipy.sparse.linalg import _special_sparse_arrays
@@ -31,13 +31,14 @@ RESULTS_DIR = "results"
 
 ALGORITHMS = {
     "XGBoost": XGBClassifier(
-        n_estimators=200,
-        max_depth=4,
+        n_estimators=400, 
+        max_depth=4, 
         learning_rate=0.1,
-        objective="binary:logistic",
+        subsample=0.8, 
+        colsample_bytree=1.0,
+        objective="binary:logistic", 
         random_state=42,
-        n_jobs=-1,
-        verbosity=0,
+        n_jobs=-1, verbosity=0, 
         eval_metric="logloss",
         use_label_encoder=False,
     ),
@@ -53,6 +54,13 @@ ALGORITHMS = {
         random_state=42,
         n_jobs=-1,
         solver="lbfgs",
+    ),
+    "SVM": SVC(
+        kernel="rbf",
+        C=1.0,
+        gamma="scale",
+        probability=True,
+        random_state=42,
     ),
 }
 
@@ -145,6 +153,14 @@ def main():
                 model = RandomForestClassifier(
                     n_estimators=200, max_depth=10, random_state=42, n_jobs=-1,
                 )
+            elif alg_name == "SVM":
+                model = SVC(
+                kernel="rbf",
+                C=1.0,
+                gamma="scale",
+                probability=True,
+                random_state=42,
+            )
             else:  # LogisticRegression
                 model = LogisticRegression(
                     C=1.0, max_iter=1000, random_state=42, n_jobs=-1, solver="lbfgs",

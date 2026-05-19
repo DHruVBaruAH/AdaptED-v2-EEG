@@ -4,29 +4,29 @@ LOSO Cross-Validation Results
 
 XGBoost
 ----------------------------------------
-  Epoch-level metrics (3310 epochs):
-    AUC: 0.6822
-    Accuracy: 0.6438
-    F1: 0.6916
-    Precision: 0.6724
-    Recall: 0.7119
+  Epoch-level metrics (6565 epochs):
+    AUC: 0.6821
+    Accuracy: 0.6498
+    F1: 0.6969
+    Precision: 0.6768
+    Recall: 0.7182
   Subject-level metrics (120 subjects):
-    AUC: 0.7508
-    Accuracy: 0.7417
-    F1: 0.7634
-    Precision: 0.7143
+    AUC: 0.7402
+    Accuracy: 0.7250
+    F1: 0.7519
+    Precision: 0.6944
     Recall: 0.8197
 
 RandomForest
 ----------------------------------------
-  Epoch-level metrics (3310 epochs):
-    AUC: 0.6670
-    Accuracy: 0.6435
-    F1: 0.7063
-    Precision: 0.6566
-    Recall: 0.7641
+  Epoch-level metrics (6565 epochs):
+    AUC: 0.6676
+    Accuracy: 0.6466
+    F1: 0.7102
+    Precision: 0.6572
+    Recall: 0.7726
   Subject-level metrics (120 subjects):
-    AUC: 0.7119
+    AUC: 0.7146
     Accuracy: 0.6917
     F1: 0.7413
     Precision: 0.6463
@@ -34,15 +34,30 @@ RandomForest
 
 LogisticRegression
 ----------------------------------------
-  Epoch-level metrics (3310 epochs):
-    AUC: 0.6814
-    Accuracy: 0.6387
-    F1: 0.6776
-    Precision: 0.6784
-    Recall: 0.6769
+  Epoch-level metrics (6565 epochs):
+    AUC: 0.6914
+    Accuracy: 0.6452
+    F1: 0.6844
+    Precision: 0.6826
+    Recall: 0.6861
   Subject-level metrics (120 subjects):
-    AUC: 0.7633
-    Accuracy: 0.7000
-    F1: 0.7188
-    Precision: 0.6866
-    Recall: 0.7541
+    AUC: 0.7683
+    Accuracy: 0.7167
+    F1: 0.7424
+    Precision: 0.6901
+    Recall: 0.8033
+
+SVM
+----------------------------------------
+  Epoch-level metrics (6565 epochs):
+    AUC: 0.7101
+    Accuracy: 0.6608
+    F1: 0.6984
+    Precision: 0.6962
+    Recall: 0.7005
+  Subject-level metrics (120 subjects):
+    AUC: 0.7774
+    Accuracy: 0.7500
+    F1: 0.7656
+    Precision: 0.7313
+    Recall: 0.8033
