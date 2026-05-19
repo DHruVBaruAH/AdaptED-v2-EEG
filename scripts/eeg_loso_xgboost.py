@@ -57,8 +57,8 @@ ALGORITHMS = {
     ),
     "SVM": SVC(
         kernel="rbf",
-        C=1.0,
-        gamma="scale",
+        C=10.0,
+        gamma=0.001,
         probability=True,
         random_state=42,
     ),
@@ -156,8 +156,8 @@ def main():
             elif alg_name == "SVM":
                 model = SVC(
                 kernel="rbf",
-                C=1.0,
-                gamma="scale",
+                C=10.0,
+                gamma=0.001,
                 probability=True,
                 random_state=42,
             )
