@@ -37,7 +37,7 @@ AdaptED v2 builds a complete EEG-based ADHD classification system on the **Nasra
 
 | Algorithm | AUC | Accuracy | F1 | Precision | Recall |
 |---|---|---|---|---|---|
-| **SVM** ⭐ | **0.7774** | **75.00%** | **0.7941** | **0.7297** | **0.8689** |
+| **SVM** ⭐ | **0.7813** | **75.00%** | **0.7941** | **0.7297** | **0.8689** |
 | Logistic Regression | 0.7683 | 71.67% | 0.7188 | 0.6866 | 0.7541 |
 | XGBoost | 0.7508 | 74.17% | 0.7634 | 0.7143 | 0.8197 |
 | Random Forest | 0.7146 | 69.17% | 0.7413 | 0.6463 | 0.8689 |
