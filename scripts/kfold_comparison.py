@@ -27,11 +27,7 @@ def main():
     feature_cols = [c for c in df.columns
                    if c not in ["subject_id", "label", "epoch_idx"]]
 
-    # ----------------------------------------------------------------
-    # SUBJECT-LEVEL aggregation — one row per subject
-    # This is the key step that prevents data leakage
-    # A subject's epochs are NEVER split across train and test
-    # ----------------------------------------------------------------
+    
     subj_features = df.groupby("subject_id")[feature_cols].mean().reset_index()
     subj_labels = df.groupby("subject_id")["label"].first().reset_index()
     subj_data = subj_features.merge(subj_labels, on="subject_id")
