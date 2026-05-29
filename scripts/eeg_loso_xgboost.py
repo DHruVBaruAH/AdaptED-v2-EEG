@@ -1,4 +1,7 @@
 from sklearn.svm import SVC
+from scipy.sparse.linalg import _special_sparse_arrays
+from scipy.sparse.linalg import _special_sparse_arrays
+from scipy.sparse.linalg import _special_sparse_arrays
 import os
 import time
 import warnings
@@ -20,16 +23,14 @@ from xgboost import XGBClassifier
 
 warnings.filterwarnings("ignore")
 
-# ---------------------------------------------------------------------------
-# Configuration
-# ---------------------------------------------------------------------------
+
 FEATURES_PATH = "data/features/eeg_features.csv"
 RESULTS_DIR = "results"
 
 ALGORITHMS = {
     "XGBoost": XGBClassifier(
-        n_estimators=200,
-        max_depth=4,
+        n_estimators=400, 
+        max_depth=4, 
         learning_rate=0.1,
         subsample=0.8, 
         colsample_bytree=1.0,
@@ -62,9 +63,8 @@ ALGORITHMS = {
 }
 
 
-# ---------------------------------------------------------------------------
 # Helpers
-# ---------------------------------------------------------------------------
+
 def aggregate_to_subject(epoch_preds, groups):
     """
     Aggregate per-epoch probabilities to subject-level prediction.
@@ -86,9 +86,8 @@ def compute_metrics(y_true, y_prob, threshold=0.5):
     }
 
 
-# ---------------------------------------------------------------------------
 # Main
-# ---------------------------------------------------------------------------
+
 def main():
     os.makedirs(RESULTS_DIR, exist_ok=True)
 
