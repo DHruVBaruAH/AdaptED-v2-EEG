@@ -1,7 +1,4 @@
 from sklearn.svm import SVC
-from scipy.sparse.linalg import _special_sparse_arrays
-from scipy.sparse.linalg import _special_sparse_arrays
-from scipy.sparse.linalg import _special_sparse_arrays
 import os
 import time
 import warnings
@@ -31,8 +28,8 @@ RESULTS_DIR = "results"
 
 ALGORITHMS = {
     "XGBoost": XGBClassifier(
-        n_estimators=400, 
-        max_depth=4, 
+        n_estimators=200,
+        max_depth=4,
         learning_rate=0.1,
         subsample=0.8, 
         colsample_bytree=1.0,

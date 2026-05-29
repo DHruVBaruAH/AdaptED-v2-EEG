@@ -1,10 +1,4 @@
-"""
-Diagnostic: inspect what ICLabel is actually labeling components as.
-Runs on ONE subject only. Prints full label + confidence for each component.
 
-Run from D:/AdaptED_v2/:
-    python scripts/diagnose_iclabel.py
-"""
 import warnings
 import numpy as np
 import pandas as pd

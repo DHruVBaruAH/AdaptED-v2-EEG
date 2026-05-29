@@ -10,9 +10,7 @@ from mne_features.feature_extraction import extract_features
 
 warnings.filterwarnings("ignore")
 
-# ---------------------------------------------------------------------------
-# Configuration
-# ---------------------------------------------------------------------------
+
 CLEANED_DIR = "data/cleaned"
 OUTPUT_DIR = "data/features"
 METADATA_FILE = os.path.join(CLEANED_DIR, "_metadata.csv")

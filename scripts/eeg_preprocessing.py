@@ -15,9 +15,7 @@ import mne
 warnings.filterwarnings("ignore")
 mne.set_log_level("WARNING")
 
-# ---------------------------------------------------------------------------
-# Configuration
-# ---------------------------------------------------------------------------
+
 RAW_CSV_PATH = "D:/ADHD_personalized/eeg_data/adhdata.csv"
 OUTPUT_DIR = "data/cleaned"
 RESULTS_DIR = "results"
