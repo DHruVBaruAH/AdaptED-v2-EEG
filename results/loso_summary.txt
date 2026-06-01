@@ -50,14 +50,14 @@ LogisticRegression
 SVM
 ----------------------------------------
   Epoch-level metrics (6565 epochs):
-    AUC: 0.6978
-    Accuracy: 0.6551
-    F1: 0.6921
-    Precision: 0.6927
-    Recall: 0.6916
+    AUC: 0.7123
+    Accuracy: 0.6638
+    F1: 0.6991
+    Precision: 0.7015
+    Recall: 0.6967
   Subject-level metrics (120 subjects):
-    AUC: 0.7777
-    Accuracy: 0.7083
-    F1: 0.7287
-    Precision: 0.6912
+    AUC: 0.7813
+    Accuracy: 0.7417
+    F1: 0.7520
+    Precision: 0.7344
     Recall: 0.7705

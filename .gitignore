@@ -19,3 +19,9 @@ Thumbs.db
 .vscode/
 .idea/
 "@ | Out-File -FilePath .gitignore -Encoding utf8
+scripts/nested_cv_loso.py
+_make_repo_dump.py
+REPO_DUMP.txt
+results/nested_cv_selected_params.json
+results/nested_cv_subject_predictions.csv
+results/nested_cv_summary.txt

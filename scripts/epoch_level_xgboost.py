@@ -17,13 +17,13 @@ def main():
     feature_cols = [c for c in df.columns
                    if c not in ["subject_id", "label", "epoch_idx"]]
 
-    # EPOCH LEVEL — replicating Garcia-Ponsoda's approach
+   
     # Epochs split randomly, same subject appears in train and test
     X = df[feature_cols].to_numpy(dtype=np.float64)
     y = (df["label"] == "ADHD").astype(int).to_numpy()
 
     print(f"Epoch-level dataset: {X.shape[0]} epochs, {X.shape[1]} features")
-    print(f"Algorithm: XGBoost — replicating Garcia-Ponsoda setup")
+    print(f"Algorithm: XGBoost")
     
 
     skf = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
@@ -64,7 +64,7 @@ def main():
                  (np.array(all_y_prob) >= 0.5).astype(int))
 
     print(f"\n{'='*65}")
-    print(f"XGBOOST — EPOCH-LEVEL 5-FOLD (Replicating Garcia-Ponsoda)")
+    print(f"XGBOOST — EPOCH-LEVEL 5-FOLD ")
     print(f"{'='*65}")
     print(f"AUC:      {auc:.4f}")
     print(f"Accuracy: {acc:.4f} ({acc*100:.2f}%)")

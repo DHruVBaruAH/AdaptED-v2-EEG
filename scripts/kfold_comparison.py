@@ -161,7 +161,6 @@ def main():
     print(f"LOSO:   120 test folds of 1 subject each.")
     print(f"LOSO gives more stable estimates on small datasets")
     print(f"because it averages across 120 evaluations vs 5.")
-    print(f"\nGarcia-Ponsoda's 86% used epoch-level splitting")
     print(f"with only 3 channels — methodologically different")
     print(f"from both evaluations shown above.")
     print(f"{'='*75}")

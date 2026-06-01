@@ -65,7 +65,6 @@ def main():
     print(f"  Epoch-level 5-fold (leaky):    AUC {auc:.4f}, Acc {acc*100:.2f}%")
     print(f"  Subject-level LOSO (honest):   AUC 0.7813, Acc 74.17%")
     print(f"\nThe gap above = subject leakage inflation")
-    print(f"Garcia-Ponsoda used epoch-level splitting — directly")
     print(f"comparable to the leaky number above, not our LOSO result.")
     print(f"{'='*60}")
 
