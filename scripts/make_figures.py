@@ -153,7 +153,17 @@ def load_data():
         ch_names = list(np.load("ch_names.npy", allow_pickle=True)) if os.path.exists("ch_names.npy") else None
         return X, y, groups, feat_names, raw_example, ch_names
 
-    # ---------------- DEMO MODE (synthetic placeholder) ----------------
+    # ---------------- NO DEMO FALLBACK ----------------
+    # Real data is missing. Refuse to silently fabricate results: raise instead of
+    # generating synthetic DEMO figures that would be mistaken for real findings.
+    raise FileNotFoundError(
+        f"Real feature data not found (expected '{real_X}' in the working directory). "
+        "Refusing to fall back to synthetic DEMO data. Provide the real X.npy/y.npy/"
+        "groups.npy/feat_names.npy (or run scripts/regenerate_figures.py, which reads "
+        "results/loso_predictions.csv and data/features/eeg_features.csv directly)."
+    )
+
+    # ---------------- DEMO MODE (synthetic placeholder) -- DISABLED, kept for reference ----------------
     print("!! DEMO MODE: synthetic data. These figures are NOT your results. !!")
     rng = np.random.default_rng(42)
     n_subj, n_feat = 120, 266
