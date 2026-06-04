@@ -25,3 +25,7 @@ REPO_DUMP.txt
 results/nested_cv_selected_params.json
 results/nested_cv_subject_predictions.csv
 results/nested_cv_summary.txt
+figures_tsne/tsne_coords*.npy
+figures_tsne/tsne_idx*.npy
+figures_tsne/tsne_subject_scores*.npy
+figures_tsne/tsne_subject_ids*.npy

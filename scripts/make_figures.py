@@ -1,40 +1,4 @@
-"""
-AdaptED v2 - Figure generation for the paper
-=============================================
-Generates every data-driven figure from the EEG ADHD pipeline:
-  1.  Class distribution
-  2.  Raw multichannel EEG time series
-  3.  Preprocessing before/after (PSD)
-  4.  Band-power comparison (ADHD vs Control)
-  5.  Epoching illustration
-  6.  Protocol-gap bar chart  (the centrepiece: 93% leaky vs 74% LOSO)
-  7.  LOSO confusion matrix (per model)
-  8.  LOSO ROC curves (all models)
-  9.  Model comparison bar (Acc / AUC / F1 / Precision / Recall)
-  10. Per-subject LOSO accuracy distribution
-  11. PCA scatter (2D)
-  12. PCA scree / cumulative variance
-  13. t-SNE scatter
-  14. Feature importance (tree model, descriptive)
-  15. SHAP summary (optional, descriptive)
-  16. Statistical-significance summary (binomial vs chance)
 
-HONESTY RULES BUILT IN (do not remove):
-  * ROC + confusion come ONLY from leave-one-subject-out out-of-fold predictions.
-    Never score a model on its own training data - that is the leaky 93% case.
-  * LOSO predictions are aggregated to SUBJECT level (mean epoch probability),
-    which reproduces the 89/120 = 74.17% subject-level accuracy.
-  * Feature importance / SHAP are DESCRIPTIVE (association, not causation).
-  * PCA / t-SNE are plotted as-is. They show little separation - that is honest
-    and consistent with the modest 74%.
-
-USAGE:
-  1. Edit load_data() to point at your real feature matrix.
-  2. Run:  python make_figures.py
-  3. Figures are written to ./figures/ as 300-dpi PNG + PDF.
-  If no data is found it runs in DEMO mode with synthetic data so you can see
-  the code works - DEMO figures are NOT your results, they are placeholders.
-"""
 
 import os
 import warnings
